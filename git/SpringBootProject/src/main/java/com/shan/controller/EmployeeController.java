@@ -20,18 +20,18 @@ public class EmployeeController {
     @Autowired(required=true)
     private EmployeeService employeeService;
 
-    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+    @RequestMapping(value = "/emp", method = RequestMethod.GET)
     @ResponseBody
     public List<Employee> listEmployee() {
         return employeeService.findAll();
     }
 
-    @RequestMapping(value = "/employee", method = RequestMethod.POST)
+    @RequestMapping(value = "/emp", method = RequestMethod.POST)
     public Employee create(@RequestBody Employee employee) {
         return employeeService.save(employee);
     }
 
-    @RequestMapping(value = "/employee/{Id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/emp/{Id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable(value = "Id") Long Id) {
         employeeService.delete(Id);
         return "success";
