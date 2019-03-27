@@ -16,7 +16,7 @@ import com.shan.dao.EmployeeDao;
 import com.shan.model.Employee;
 
 
-@Service(value="userService")
+@Service(value="employeeService")
 public class EmployeeServiceImpl implements UserDetailsService, EmployeeService{
 
 	
@@ -31,12 +31,12 @@ public class EmployeeServiceImpl implements UserDetailsService, EmployeeService{
 
 	@Override
 	public UserDetails loadUserByUsername(String empName) throws UsernameNotFoundException {
-		Employee employee=employeeDAO.findByEmpName(empName);
+		Employee employee=employeeDAO.findByfname(empName);
 		
 		if(employee == null) {
 			throw new UsernameNotFoundException("Invalid username/password");
 		}
-		return new org.springframework.security.core.userdetails.User(String.valueOf(employee.getEmpId()),employee.getEmpName(),getAuthority());
+		return new org.springframework.security.core.userdetails.User(String.valueOf(employee.getId()),employee.getfname(),getAuthority());
 		
 	}
 	
@@ -48,8 +48,8 @@ public class EmployeeServiceImpl implements UserDetailsService, EmployeeService{
 	}
 
 	@Override
-	public void delete(long id) {
-		employeeDAO.delete(id);
+	public void delete(long empId) {
+		employeeDAO.delete(empId);
 		
 	}
 

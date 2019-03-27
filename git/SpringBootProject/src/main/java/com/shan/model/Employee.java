@@ -2,44 +2,38 @@ package com.shan.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-@Entity
 @Table(name="employee")
-
+@Entity
 public class Employee {
 
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long empId;
-	private String empName;
-	private String emailId;
+	private long Id;
+	private String fname;
+	private String email;
 	private String designation;
 	private Date joining_date;
 	
-	public long getEmpId() {
-		return empId;
+	public long getId() {
+		return Id;
 	}
-	public void setEmpId(long empId) {
-		this.empId = empId;
+	public void setId(long Id) {
+		this.Id = Id;
 	}
-	public String getEmpName() {
-		return empName;
+	public String getfname() {
+		return fname;
 	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setEmpName(String fname) {
+		this.fname = fname;
 	}
-	public String getEmailId() {
-		return emailId;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEmailId(String email) {
+		this.email = email;
 	}
 	public String getDesignation() {
 		return designation;
