@@ -26,13 +26,13 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
-    @RequestMapping(value = "/emp", method = RequestMethod.POST)
+    @RequestMapping(value = "/emps", method = RequestMethod.POST)
     public Employee create(@RequestBody Employee employee) {
         return employeeService.save(employee);
     }
 
-    @RequestMapping(value = "/emp/{Id}", method = RequestMethod.DELETE)
-    public String delete(@PathVariable(value = "Id") Long Id) {
+    @RequestMapping(value = "/emp/{id}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable(value = "id") Long Id) {
         employeeService.delete(Id);
         return "success";
     }
