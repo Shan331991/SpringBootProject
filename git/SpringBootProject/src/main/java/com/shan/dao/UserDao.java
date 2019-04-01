@@ -7,6 +7,7 @@ import com.shan.model.User;
 
 @Repository
 public interface UserDao extends CrudRepository<User, Long>{
+	User findById(long id);
 	User findByUsername(String userName);
 
 }

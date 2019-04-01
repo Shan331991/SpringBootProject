@@ -8,6 +8,6 @@ public interface EmployeeService {
 
 	Employee save(Employee employee);
 	List<Employee> findAll();
-	void delete(Long Id);
+	void delete(long Id);
 	
 }

@@ -7,6 +7,6 @@ import com.shan.model.Employee;
 
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Long>{
-	Employee findByid(long id);
+	Employee findById(long id);
 
 }
